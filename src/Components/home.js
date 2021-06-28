@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Table from "./Table";
 import "../index.css";
 import Logo from "../Assets/Logo.png";
-const Name = JSON.parse(localStorage.getItem("nameF"));
-const email = JSON.parse(localStorage.getItem("email"));
-const pincode = JSON.parse(localStorage.getItem("pincode"));
+
 const Home = (props) => {
-  const history = useHistory();
+  const Name = JSON.parse(localStorage.getItem("nameF"));
+  const email = JSON.parse(localStorage.getItem("email"));
+  const pincode = JSON.parse(localStorage.getItem("pincode"));
   const [indata, setData] = useState([]);
 
   var today = new Date();
@@ -52,7 +52,7 @@ const Home = (props) => {
             <div className="font-weight-bold email">{email}</div>
           </div>
           <div
-            class="d-flex justify-content-end ml-auto img-main
+            className="d-flex justify-content-end ml-auto img-main
                   "
           >
             <img src={Logo} alt="Logo" />
@@ -100,15 +100,9 @@ const Home = (props) => {
         )}
 
         <div className="container-fluid p-0 d-flex justify-content-center">
-          <button
-            type="submit"
-            className="col btn go-back "
-            onClick={() => {
-              history.goBack();
-            }}
-          >
+          <Link className="col btn go-back " to="/">
             Go Back
-          </button>
+          </Link>
 
           <button
             type="submit"
