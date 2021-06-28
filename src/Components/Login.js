@@ -3,14 +3,14 @@ import Card from "../Assets/Card.png";
 import Logo from "../Assets/Logo.png";
 import { useHistory } from "react-router-dom";
 
-const value = {
-  nameF: "",
-  email: "",
-};
-const pincode = {
-  pincode: "",
-};
 const Login = () => {
+  const value = {
+    nameF: "",
+    email: "",
+  };
+  const pincode = {
+    pincode: "",
+  };
   const [inputData, setInputData] = useState(value);
   const [inputpincode, setPincode] = useState(pincode);
   const history = useHistory();
